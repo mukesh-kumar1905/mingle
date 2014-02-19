@@ -11,7 +11,7 @@ app.get("/", function(req, res){
     res.render("page");
 });
 app.use(express.static(__dirname + '/public'));
-var io = require('socket.io').listen(app.listen(port));
+var io = require('socket.io').listen(app.listen(port,ipaddr));
 io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'welcome to the Mingle' });
     socket.on('send', function (data) {
