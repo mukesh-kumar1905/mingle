@@ -2,9 +2,9 @@
     "name": "Mingle",
     "version": "0.0.0",
     "description": "Real time web chat",
-    "main": "index.js"
+    "main": "server.js"
     "scripts": {
-    "start": "node index.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
+    "start": "node server.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
 	}
     "dependencies": {
         "socket.io": "latest",
