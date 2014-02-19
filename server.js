@@ -1,3 +1,5 @@
+#!/bin/env node
+// OpenShift sample Node application
 var express = require("express");
 var app = express();
 var ipaddr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
