@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
-var port = 3700;
+var ipaddr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
  
 
 app.set('views', __dirname + '/tpl');
