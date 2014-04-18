@@ -9,7 +9,8 @@
     "dependencies": {
         "socket.io": "latest",
         "express": "latest",
-        "jade": "latest"
+        "jade": "latest",
+        "grunt": "latest"
     },
     "author": "Mukesh"
 }
