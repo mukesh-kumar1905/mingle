@@ -10,7 +10,8 @@
     "socket.io": "latest",
     "express": "latest",
     "jade": "latest",
-    "grunt": "latest"
+    "grunt": "latest",
+    "chalk": "latest"
   },
   "author": "Mukesh",
   "devDependencies": {
