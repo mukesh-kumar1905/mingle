@@ -23,7 +23,7 @@ html(lang="en")
                 input#send(type='button', value='send')
                 .infield    
                 | Share URL:
-                input(type='text' ReadOnly)
+                input(type='text', data-room=share, name='shareUrl', value=shareURL ReadOnly).form-control
 
                 
          #footer
