@@ -2,8 +2,12 @@ doctype html
 html(lang="en")
     head
         title= "Mingle:Real time web chat"
-        script(src='/chat.js')
-        script(src='/socket.io/socket.io.js')
+        block javascript
+            script(src='/socket.io/socket.io.js')
+            script(src='static/javascript/jquery.js')
+            script(src='/chat.js')
+
+
         link(rel='stylesheet', href='static/stylesheets/styles.css')
     body
         #wrap
@@ -23,7 +27,7 @@ html(lang="en")
                 input#send(type='button', value='send')
                 .infield    
                 | Share URL:
-                input(type='text', data-room=share, name='shareUrl', value=shareURL ReadOnly).form-control
+                input#test(type='text', data-room=share, name='shareUrl', value=shareURL ReadOnly).form-control
 
                 
          #footer
@@ -31,3 +35,5 @@ html(lang="en")
                 p.text-muted
                     | Developed by
                     | <a href="http://github.com/mukesh-kumar1905/">Mukesh Kumar</a>
+
+        

@@ -26,11 +26,9 @@ io.sockets.on('connection', function (socket) {
 
         io.sockets.emit('message', data);
     });
-    socket.on('connect', function() {
-       // Connected, let's sign-up for to receive messages for this room
-       socket.emit('room', room);
-});
-
+    socket.on('join', function(data) {
+        socket.join(data.room);
+    });
 });
 console.log("Listening on port " + port);
 

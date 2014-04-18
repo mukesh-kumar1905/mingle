@@ -32,7 +32,6 @@ window.onload = function() {
             socket.emit('send', { message: text, username: name.value });
         }
     };
-    var $ = require('jquery')(window);      ;
     var room = $('#test').data('room');
     var player = new Player(room, '', '');
      
@@ -40,6 +39,4 @@ window.onload = function() {
         socket.emit('join', {room: room});
     });
      
-    socket.on('assign', function(data) {       
-    });
 }

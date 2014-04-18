@@ -29,6 +29,15 @@ module.exports = function(grunt) {
             },
         },
         watch: {
+            js: {
+                files: [
+                    './bower_components/jquery/jquery.js',
+                    './bower_components/bootstrap/dist/js/bootstrap.js',
+                    './bower_components/alertify.js/lib/alertify.js',
+                    './assets/javascript/frontend.js'
+                ],
+                tasks: ['concat:js']
+            },
             less: {
                 files: ['./assets/stylesheets/*.less'],
                 tasks: ['less']
