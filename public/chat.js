@@ -7,26 +7,9 @@ window.onload = function() {
     var content = document.getElementById("content");
     var name = document.getElementById("name");
     function Player(room, pid) {
-        this.room = room;
-        this.pid = pid;
-    }
-    var room = $('input').data('room');
-var player = new Player(room, '', '');
- 
-socket.on('connect', function() {
-    socket.emit('join', {room: room});
-});
- 
-socket.on('assign', function(data) {
-    player.color = data.color;
-    player.pid = data.pid;
-    if(player.pid == 1) {
-        $('.p1-score p').addClass('current');
-    }
-    else {
-        $('.p2-score p').addClass('current');
-    }
-});
+    this.room = room;
+    this.pid = pid;
+}
     socket.on('message', function (data) {
         if(data.message) {
             messages.push(data);
@@ -49,5 +32,14 @@ socket.on('assign', function(data) {
             socket.emit('send', { message: text, username: name.value });
         }
     };
- 
+    var $ = require('jquery')(window);      ;
+    var room = $('#test').data('room');
+    var player = new Player(room, '', '');
+     
+    socket.on('connect', function() {
+        socket.emit('join', {room: room});
+    });
+     
+    socket.on('assign', function(data) {       
+    });
 }
