@@ -46,11 +46,11 @@ module.exports = function(grunt) {
     });
  
     // Load plugins
-   /* grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
      
     // Define tasks
-    grunt.registerTask('default', ['watch']);*/
+    grunt.registerTask('default', ['watch']);
  
 };
