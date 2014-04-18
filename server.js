@@ -16,13 +16,14 @@ app.get("/", function(req, res){
 
 app.get('/:room([A-Za-z0-9]{6})', function(req, res) {
     share = req.params.room;
-    res.render('index.jade', {shareURL: req.protocol + '://' + req.get('host') + '/' + share, share: share});
+    res.render('page.jade', {shareURL: req.protocol + '://' + req.get('host') + '/' + share, share: share});
 });
 app.use(express.static(__dirname + '/public'));
 var io = require('socket.io').listen(app.listen(port,ipaddr));
 io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'welcome to Mingle' });
     socket.on('send', function (data) {
+
         io.sockets.emit('message', data);
     });
 });
