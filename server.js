@@ -5,7 +5,7 @@ var app = express();
 var ipaddr = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
  
-
+app.use('/static', express.static(__dirname + '/static'));
 app.set('views', __dirname + '/tpl');
 app.set('view engine', "jade");
 app.engine('jade', require('jade').__express);

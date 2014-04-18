@@ -4,12 +4,30 @@ html(lang="en")
         title= "Mingle:Real time web chat"
         script(src='/chat.js')
         script(src='/socket.io/socket.io.js')
+        link(rel='stylesheet', href='static/stylesheets/styles.css')
     body
-        #content(style='width: 500px; height: 300px; margin: 0 0 20px 0; border: solid 1px #999; overflow-y: scroll;')
-       .controls
-            | Name:
-            input#name(style='width:350px;')
-            br
-            | Message:
-            input#field(style='width:350px;')
-            input#send(type='button', value='send')
+        #wrap
+            nav.navbar.navbar-default(role='navigation')
+                .container-fluid
+                    .navbar-header
+                        a.navbar-brand(href='#') Mingle
+            block content
+            #content
+            .controls
+                .infield#shared
+                | Name:
+                input#name
+                .infield
+                | Message:
+                input#field
+                input#send(type='button', value='send')
+                .infield    
+                | Share URL:
+                input(type='text' ReadOnly)
+
+                
+         #footer
+            .container
+                p.text-muted
+                    | Developed by
+                    | <a href="http://github.com/mukesh-kumar1905/">Mukesh Kumar</a>
