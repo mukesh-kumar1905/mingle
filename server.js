@@ -22,7 +22,7 @@ app.use(express.static(__dirname + '/public'));
 var io = require('socket.io').listen(app.listen(port,ipaddr));
 io.sockets.on('connection', function (socket) {
     socket.emit('message', { message: 'welcome to Mingle' });
-    socket.emit('connect', {}});
+    socket.emit('connect', {});
     socket.on('send', function (data) {
         io.sockets.in(data.room).emit('message', data);
 
