@@ -23,17 +23,17 @@ window.onload = function() {
             console.log("There is a problem:", data);
         }
     });
- 
+    var room = $('#test').data('room');
+    var player = new Player(room, '', '');
     sendButton.onclick = function() {
         if(name.value == "") {
             alert("Please type your name!");
         } else {
             var text = field.value;
-            socket.emit('send', { message: text, username: name.value });
+            socket.emit('send', { message: text, username: name.value ,room: room});
         }
     };
-    var room = $('#test').data('room');
-    var player = new Player(room, '', '');
+   
      
     socket.on('connect', function() {
         socket.emit('join', {room: room});
