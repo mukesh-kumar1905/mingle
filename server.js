@@ -29,6 +29,7 @@ io.sockets.on('connection', function (socket) {
     });
     socket.on('join', function(data) {
         socket.join(data.room);
+        console.log("Connected to room :"+data.room);
     });
 });
 console.log("Listening on port " + port);
